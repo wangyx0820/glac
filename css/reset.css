@@ -1,0 +1,269 @@
+*{margin: 0; padding: 0; box-sizing: border-box;font-family: '微软雅黑','PingFang-SC-Regular,PingFangSC-Medium,Microsoft YaHei,Arial,Helvetica,sans-serif';}
+*:not(input,textarea){
+    user-select:none;
+    -webkit-user-select:none;
+    -o-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+}
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption{
+    padding: 0;
+    margin: 100;
+    list-style: none;
+    font-style: normal;
+    text-decoration: none;
+    border: none;
+    font-weight: normal;
+    box-sizing: border-box;
+    outline: none;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-font-smoothing: antialiased;
+}
+body{
+    background-color: #f8f8f8;
+}
+img { border:none; width:100%;}
+a:hover{
+    color: #8CAFFF;
+}
+@keyframes hvr-pulse {
+    25% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    75% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+
+/* 禁止css动画抖动 */
+.transform {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+  
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    /* Other transform properties here */
+ }
+.swiper-pagination-bullets{
+    padding-right:10px !important;
+}
+.swiper-pagination{
+    text-align: right !important;
+}
+.swiper-pagination-bullet{
+    background: #fff !important;
+    opacity:.8 !important;
+}
+.swiper-pagination-bullet-active{
+    background: rgb(212, 31, 31) !important;
+}
+.swiper-button-next, .swiper-button-prev{
+    color: #fff !important;
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+    width: 0px;
+    height: 0px;
+    background-color: #F5F5F5;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);
+    box-shadow: inset 0 0 1px rgba(0,0,0,0);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+input{
+    /*-webkit-appearance: none;*/
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    background-color:#fff;
+}
+/* input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] { */
+    /* -webkit-appearance: none; */
+/* } */
+
+textarea { -webkit-appearance: none; -moz-appearance: none;}
+
+html,body{
+    width: 100%;
+}
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.clear{
+    zoom:1;
+}
+.back_img{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.margin{
+    margin: 0 auto;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.flex-box{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flex;
+    display: flex;
+}
+.flex-1{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+/*溢出省略处理*/
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#click_btn{
+    background-color: #DDC899;
+    display: block;
+    text-decoration: none;
+}
+#click_btn:link{
+    background-color: #DDC899;
+}
+#click_btn:hover{
+    background-color: #DDC899;
+}
+#click_btn:active{
+    background-color: #DDC899;
+}
+#click_btn:visited{
+    background-color: #DDC899;
+}
+/*弹出框样式*/
+.mint-msgbox-wrapper>.mint-msgbox{
+    width: 4.9rem;
+    min-height: 2.55rem;
+    max-height: 3.1rem;
+    border-radius: .3rem;
+    border: none;
+}
+.mint-msgbox-wrapper .mint-msgbox-title{
+    color:#000000;
+    font-size:.32rem;
+}
+.mint-msgbox-wrapper .mint-msgbox-message{
+    color: #333333;
+    margin: 0;
+    text-align: center;
+    line-height: .45rem;
+    font-size:.26rem;
+}
+.mint-msgbox-wrapper .mint-msgbox-content {
+    padding: 10px 10px 18px;
+    border-bottom: 1px solid #eee;
+    min-height: 36px;
+    position: relative;
+}
+.mint-msgbox-wrapper .mint-msgbox-confirm,.mint-msgbox .mint-msgbox-btns .mint-msgbox-cancel{
+    font-size: .32rem;
+    height: .88rem;
+    color: #666;
+}
+.mint-msgbox-btns .mint-msgbox-cancel{
+    border-right:1px solid #eee;
+}
+.mint-msgbox-wrapper .mint-msgbox-confirm{
+    color: #EDA835;
+}
+.mint-msgbox-wrapper .mint-msgbox-confirm:active,.mint-msgbox-wrapper .mint-msgbox-cancel:active{
+    color: #DDC899;
+}
+/*placeholder颜色*/
+input::-webkit-input-placeholder{
+    color:#BCBCBC;
+    font-size:.28rem;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#BCBCBC;
+    font-size:.28rem;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#BCBCBC;
+    font-size:.28rem;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#BCBCBC;
+    font-size:.28rem;
+}
+/*textarea-placeholder颜色*/
+textarea::-webkit-input-placeholder{
+    color:#BCBCBC;
+    font-size:.28rem;
+}
+textarea::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#BCBCBC;
+    font-size:.28rem;
+}
+textarea:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#BCBCBC;
+    font-size:.28rem;
+}
+textarea:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#BCBCBC;
+    font-size:.28rem;
+}
+/*细线*/
+.line{
+    height:1px;
+    -webkit-transform: scaleY(0.5);
+    -webkit-transform-origin:0 0;
+    -o-transform: scaleY(0.5);
+    -o-transform-origin:0 0;
+    -moz-transform: scaleY(0.5);
+    -moz-transform-origin:0 0;
+    transform: scaleY(0.5);
+    transform-origin:0 0;
+    overflow: hidden;
+    background: #dddddd;
+    position: relative;
+}
+.BMap_cpyCtrl {
+    display: none;
+}
+.anchorBL {
+    display: none;
+}
+.picker{
+    background-color:#fff;
+}

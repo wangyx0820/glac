@@ -1,0 +1,79 @@
+@import './mixin';
+@import './common';
+
+.main-cont{
+    width: 100%;
+    padding:30px 30px 0;
+    background-color: #fff;
+    .article{
+        .title{
+            height: 124px;
+            padding:20px;
+            margin-bottom: 30px;
+            background-color: #eee;
+            flex-direction: column;
+            justify-content: space-between;
+            @include flex-box();
+            h3{
+                color: #333;
+                font-size: 36px;
+                font-weight: bold;
+                text-align: center;
+            }
+            p{
+                text-align: right;
+                color: #666;
+                @include small-font-size();
+                span{
+                    margin-left: 20px;
+                }
+            }
+        }
+        .cont{
+            color: #666;
+            padding: 40px;
+            @include list-font-size();
+            background-color: #eee;
+            p{
+                line-height: 40px;
+                margin-bottom: 40px;
+                text-indent: 2em;
+            }
+            .img-wrap{
+                margin-bottom: 30px;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                @include flex-box();
+                img{
+                    width: 700px;
+                    height: 400px;
+                    margin-bottom: 18px;
+                }
+                span{
+                    color: #999;
+                    @include content-font-size();
+                }
+            }
+        }
+        .share{
+            height: 45px;
+            color: #666;
+            text-align: right;
+            align-items: center;
+            justify-content: flex-end;
+            @include flex-box();
+            @include content-font-size();
+            span{
+                cursor: pointer;
+                margin-left: 5px;
+                @include inline-block(18px,18px);
+            }
+            @for $i from 1 through 5 {
+                .item#{$i} { 
+                    @include bg-image('../images/share-icon#{$i}.png');
+                }
+            }
+        }
+    }
+}

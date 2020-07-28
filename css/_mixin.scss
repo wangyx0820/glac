@@ -1,0 +1,265 @@
+// 全局变量
+$mc:0 auto;
+$hover-color:#73a2ff;  // link hover颜色
+$left-color:rgb(212, 31, 31);  //左侧边框颜色
+$important-color:#204881;  // 重点文字颜色
+
+$title-color:#333333;  // 标题文字颜色
+$nomal-color:#666666;  // 普通文字颜色
+$order-btn-color:#1677CB; //订单列表按钮颜色
+$pading-30:.4rem;      // 页面空白30px
+$greyBg-color:#f5f5f5; // 页面底色：灰色
+$font-pingfang:'PingFangSC-Medium'; // 文字样式
+
+// 媒体查询
+$media-stack:
+  (group: tablet, id: general, rule: "only screen and (max-width: 768px)"),
+  (group: desktop, id: general, rule: "only screen and(min-width: 769px) and (max-width: 1023px)"),
+  (group: smaller, id: general, rule: "only screen and(min-width: 1024px) and (max-width: 1169px)"),
+  (group: large, id: general, rule: "only screen and (min-width: 1170px)"),
+  (group: print, id: general, rule: "only print");
+
+@mixin media($group, $id: general){
+    @each $media in $media-stack{
+        @if($group == map-get($media, group) and $id == map-get($media, id)){
+        $rule: map-get($media, rule);
+        @media #{$rule} {@content}
+        }
+    }
+}
+
+@mixin animation($val) {
+    animation: $val 0.3s linear;
+    -webkit-animation: $val 0.3s linear;
+    -moz-animation: $val 0.3s linear;
+    -o-animation: $val 0.3s linear;
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    -o-animation-fill-mode:forwards;
+}
+// 标题列表字体
+@mixin title-font-size {
+    font-size: 24px;
+    @include media (tablet) {
+        font-size: .32rem;;
+    }
+}
+// 新闻列表字体
+@mixin list-font-size {
+    font-size: 16px;
+    @include media (tablet) {
+        font-size: .26rem;;
+    }
+}
+// 正文字体大小
+@mixin content-font-size {
+    font-size: 14px;
+    @include media (tablet) {
+        font-size: .24rem;;
+    }
+}
+// 正文字体-小
+@mixin small-font-size {
+    font-size: 12px;
+    @include media (tablet) {
+        font-size: .22rem;;
+    }
+}
+// 多列布局
+@mixin column-count($num,$gap) {
+    -moz-column-count:$num; 	
+    -webkit-column-count:$num; 
+    column-count:$num;
+    -moz-column-gap:$gap;		/* Firefox */
+    -webkit-column-gap:$gap;	/* Safari 和 Chrome */
+    column-gap:$gap;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+ }
+
+@mixin flex-box{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flex;
+    display: flex;
+}
+@mixin flex-grow($num){
+    -webkit-box-flex: $num;
+    -webkit-flex: $num;
+    -moz-box-flex: $num;
+    -ms-flex: $num;
+    flex: $num;
+}
+@mixin justify-content{
+    -webkit-justify-content:space-between;
+    justify-content:space-between;
+}
+
+//伪类选择器
+@mixin first($num, $type:false){
+    @if($num ==1) and ($type == true){
+        &:first-of-type{
+            @content;
+        }
+    };
+    @if ($num == 1) and ($type == false){
+        &:first-child{
+            @content;
+        }
+    };
+    @if ($num !=1) and ($type == true){
+        &:nth-of-type(-n + #{$num}){
+            @content;
+        }
+    };
+    @if ($num != 1) and ($type == false){
+        &:nth-child(-n + #{$num}){
+            @content;
+        }
+    };
+    @if ($num == -1) and ($type == false){
+        &:last-child{
+            @content;
+        }
+    }
+}
+//关于动画
+@mixin transition($transition) {
+    -moz-transition: $transition;
+    -webkit-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+@mixin transform-origin($origin) {
+    -moz-transform-origin:$origin;
+    -webkit-transform-origin:$origin;
+    -ms-transform-origin:$origin;
+    -o-transform-origin:$origin;
+    transform-origin:$origin;
+}
+@mixin scale($scale) {
+    -moz-transform:scale($scale);
+    -webkit-transform:scale($scale);
+    -ms-transform:scale($scale);
+    -o-transform:scale($scale);
+    transform:scale($scale);
+}
+@mixin rotate($rotate) {
+    transform: rotate($rotate);
+    -webkit-transform: rotate($rotate);
+    -moz-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    -o-transform: rotate($rotate);
+}
+//转化为行内块元素
+@mixin inline-block($width,$height){
+    display: inline-block;
+    width: $width;
+    height: $height;
+}
+//透明度
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    filter: alpha(opacity=$opacity * 100);
+}
+//超出一行文本省略
+@mixin overflow() {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+//多行超出文本省略
+@mixin overflow-more($num) {
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:$num;
+    display: -moz-box;
+    -moz-line-clamp: $num !important;
+    -moz-box-orient: vertical;
+    overflow: hidden;
+}
+// 圆角
+@mixin border-radius($radius) {
+    -webkit-border-radius:$radius;
+    -moz-border-radius:$radius;
+    -o-border-radius:$radius;
+    border-radius:$radius;
+}
+// 设置阴影
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow:$shadow;
+    -moz-box-shadow:$shadow;
+    -o-box-shadow:$shadow;
+    box-shadow:$shadow;
+}
+// 绝对居中
+@mixin center($width: null, $height: null) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @if not $width and not $height {
+        transform: translate(-50%, -50%);
+    } @else if $width and $height { //水平、垂直居中
+        width: $width;
+        height: $height;
+        margin: -($height / 2) #{0 0} -($width / 2);
+    } @else if not $height { // 水平居中
+        width: $width;
+        margin-left: -($width / 2);
+        transform: translateY(-50%);
+    } @else { // 垂直居中
+        height: $height;
+        margin-top: -($height / 2);
+        transform: translateX(-50%);
+    }
+}
+//细线
+@mixin line($color){
+    height:1px;
+    -webkit-transform: scaleY(0.5);
+    -webkit-transform-origin:0 0;
+    -o-transform: scaleY(0.5);
+    -o-transform-origin:0 0;
+    -moz-transform: scaleY(0.5);
+    -moz-transform-origin:0 0;
+    transform: scaleY(0.5);
+    transform-origin:0 0;
+    overflow: hidden;
+    background: $color;
+}
+//背景图片
+@mixin bg-image($url){
+    background: url($url) no-repeat;
+    background-size: 100%;
+}
+// 边框背景
+@mixin br-image($url) {
+    -webkit-border-image: url($url) 30 round; /* Safari 3.1-5 */
+    -o-border-image: url($url) 30 round; /* Opera 11-12.1 */
+    border-image: url($url) 30 30 round;
+}
+// 渐变色
+@mixin bg-color(){
+    background: -moz-linear-gradient(top, #C09C60 30%, #DDC899 100%);
+    background: -webkit-linear-gradient(top, #C09C60 30%,#DDC899 100%);
+    background: -o-linear-gradient(top, #C09C60 30%,#DDC899 100%);
+    background: -ms-linear-gradient(top, #C09C60 30%,#DDC899 100%);
+    background: linear-gradient(to bottom, #C09C60 30%,#DDC899 100%);
+}
