@@ -28,9 +28,9 @@
                     </div>
                     <!-- 导航栏 -->
                     <div class="nav-list">
-                        <div class="nav-item hvr-radial-in"><a href="">首页</a></div> 
-                        <div class="nav-item hvr-radial-in"><a href="">协会概况</a></div> 
-                        <div class="nav-item active-link">
+                        <div class="nav-item"><a href="">首页</a></div> 
+                        <div class="nav-item"><a href="">协会概况</a></div> 
+                        <div class="nav-item">
                             <a href="">新闻咨询</a>
                             <!-- 二级菜单 -->
                             <div class="select-menu">
@@ -48,12 +48,12 @@
                                 </div>
                             </div>
                         </div> 
-                        <div class="nav-item hvr-radial-in"><a href="">会员天地</a></div> 
-                        <div class="nav-item hvr-radial-in"><a href="">科技奖励</a></div> 
-                        <div class="nav-item hvr-radial-in"><a href="">产业大会</a></div> 
-                        <div class="nav-item hvr-radial-in"><a href="">标准</a></div> 
-                        <div class="nav-item hvr-radial-in"><a href="">科学普及</a></div> 
-                        <div class="nav-item hvr-radial-in"><a href="">联系我们</a></div> 
+                        <div class="nav-item"><a href="">会员天地</a></div> 
+                        <div class="nav-item"><a href="">科技奖励</a></div> 
+                        <div class="nav-item"><a href="">产业大会</a></div> 
+                        <div class="nav-item"><a href="">标准</a></div> 
+                        <div class="nav-item"><a href="">科学普及</a></div> 
+                        <div class="nav-item"><a href="">联系我们</a></div> 
                     </div>
                     <!-- 搜索框 -->
                     <div class="search">
@@ -74,9 +74,6 @@
                         <span>EN</span>
                         <span class="login-btn">登录</span>
                     </div>
-                    <div class="logo">
-                        <img src="./images/index/logo-pc.png" alt="">
-                    </div>
                     <div class="search">
                         <input type="text">
                     </div>
@@ -88,6 +85,26 @@
                         <span>协会概况</span>
                         <span>新闻资讯</span>
                         <span>会员天地</span>
+                    </div>
+                    <div class="menu-list">
+                        <ul>
+                            <li><a href="">首页</a></li>
+                            <li><a href="">协会概况</a></li>
+                            <li class="active">
+                                <a href="">新闻资讯</a>
+                                <ul>
+                                    <li><a href="">通知公告</a></li>
+                                    <li><a href="">协会动态</a></li>
+                                    <li><a href="">产业要闻</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">会员天地</a></li>
+                            <li><a href="">科技奖励</a></li>
+                            <li><a href="">产业大会</a></li>
+                            <li><a href="">标准</a></li>
+                            <li><a href="">科学普及</a></li>
+                            <li><a href="">联系我们</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="slogan">
@@ -453,7 +470,7 @@
                 <div class="top-icon">
                     <!-- 左侧卫星 -->
                     <div class="left-satellite">
-                        <img src="" alt="">
+                        <img src="./images/index/weixing.png" alt="">
                     </div>
                     <!-- 右侧图标 -->
                     <div class="right-circle">
@@ -467,21 +484,21 @@
                 <div class="award">
                     <h3 class="special-title"><b></b>科技奖励</h3>
                     <div class="award-list">
-                        <span class="award-item item1 hvr-wobble-vertical">科技进步奖</span>
-                        <span class="award-item item2">优秀工程奖</span>
-                        <span class="award-item item3">优秀论文奖</span>
-                        <span class="award-item item4">终身成就奖</span>
-                        <span class="award-item item5">北斗七星奖</span>
+                        <span class="award-item item1 hvr-wobble-horizontal">科技进步奖</span>
+                        <span class="award-item item2 hvr-wobble-horizontal">优秀工程奖</span>
+                        <span class="award-item item3 hvr-wobble-horizontal">优秀论文奖</span>
+                        <span class="award-item item4 hvr-wobble-horizontal">终身成就奖</span>
+                        <span class="award-item item5 hvr-wobble-horizontal">北斗七星奖</span>
                     </div>
                 </div>
                 <div class="situation">
                     <h3 class="special-title"><b></b>协会概况</h3>
                     <div class="situation-list">
-                        <span class="situation-item item1">协会介绍</span>
-                        <span class="situation-item item2">协会制度</span>
-                        <span class="situation-item item3">组织结构</span>
-                        <span class="situation-item item4">领导之窗</span>
-                        <span class="situation-item item5">分支机构</span>
+                        <span class="situation-item item1 hvr-wobble-horizontal">协会介绍</span>
+                        <span class="situation-item item2 hvr-wobble-horizontal">协会制度</span>
+                        <span class="situation-item item3 hvr-wobble-horizontal">组织结构</span>
+                        <span class="situation-item item4 hvr-wobble-horizontal">领导之窗</span>
+                        <span class="situation-item item5 hvr-wobble-horizontal">分支机构</span>
                     </div>
                 </div>
             </div>
@@ -568,11 +585,22 @@
         </div>
     </div>
     <script src="./js/rem.js"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/swiper.min.js"> </script>
     <script>
-    var mySwiper1 = new Swiper ('.swiper-container1', {
-        speed:1000,
-        effect : 'fade',
+        var mySwiper1 = new Swiper ('.swiper-container1', {
+            speed:1000,
+            effect : 'fade',
+            loop : true,
+            autoplay: true,
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        })
+        var mySwiper2 = new Swiper ('.swiper-container2', {
+        speed:2000,
+        direction : 'vertical',
         loop : true,
         autoplay: true,
 
@@ -580,32 +608,21 @@
         pagination: {
             el: '.swiper-pagination',
         },
-    })
-    var mySwiper2 = new Swiper ('.swiper-container2', {
-      speed:2000,
-      direction : 'vertical',
-      loop : true,
-      autoplay: true,
+        })
+        var mySwiper3 = new Swiper ('.swiper-container3', {
+            direction : 'horizontal',
+            slidesPerView: 4,
+            slidesPerColumn: 2,
+            slidesPerColumnFill : 'column',
+            // spaceBetween: 30,
 
-      // 如果需要分页器
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    })
-    var mySwiper3 = new Swiper ('.swiper-container3', {
-        direction : 'horizontal',
-        slidesPerView: 4,
-        slidesPerColumn: 2,
-        slidesPerColumnFill : 'column',
-        // spaceBetween: 30,
-
-        // 如果需要前进后退按钮
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-    })
-    var mySwiper4 = new Swiper ('.swiper-container4', {
+            // 如果需要前进后退按钮
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+        })
+        var mySwiper4 = new Swiper ('.swiper-container4', {
         speed:5000,  //设置图片滚动速度
         loop:true,
         // 自动滚动，注意与上面的loop不一样，loop是指能否从最后位置滚动回第一的位置
@@ -625,8 +642,8 @@
         // },
         
       })
-      //swiper中设置了图片的滚动动画是ease-out，需要改成linear才有平稳滚动的效果
-      mySwiper3.$wrapperEl.css({'-webkit-transition-timing-function': "linear","-moz-transition-timing-function": "linear","-ms-transition-timing-function": "linear","-o-transition-timing-function": "linear","transition-timing-function": "linear"});
+        //swiper中设置了图片的滚动动画是ease-out，需要改成linear才有平稳滚动的效果
+        mySwiper3.$wrapperEl.css({'-webkit-transition-timing-function': "linear","-moz-transition-timing-function": "linear","-ms-transition-timing-function": "linear","-o-transition-timing-function": "linear","transition-timing-function": "linear"});
   </script>
 </body>
 </html>

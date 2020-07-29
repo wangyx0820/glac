@@ -76,4 +76,50 @@
             }
         }
     }
+    @include media(tablet){
+        padding: .3rem 0 0;
+        .article{
+            .title{
+                height: auto;
+                padding: .4rem;
+                margin-bottom: .3rem;
+                align-items: flex-start;
+                h3{
+                    width: 100%;
+                    font-size: .4rem;
+                    text-align: left;
+                    margin-bottom: .2rem;
+                }
+                p{
+                    text-align: left;
+                    span{
+                        margin-right: .2rem;
+                        margin-left: 0;
+                    }
+                }
+            }
+            .cont{
+                padding: .4rem;
+                p{
+                    line-height: .6rem;
+                    margin-bottom: .4rem;
+                }
+                .img-wrap{
+                    margin-bottom: .3rem;
+                    img{
+                        width: 6rem;
+                        height: 3.5rem;
+                        margin-bottom: .2rem;
+                    }
+                }
+            }
+            .share{
+                height: .8rem;
+                span{
+                    margin-left: .2rem;
+                    @include inline-block(.36rem,.36rem);
+                }
+            }
+        }
+    }
 }

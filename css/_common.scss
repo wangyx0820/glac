@@ -3,10 +3,166 @@
 .container{
     width: 1200px;
     margin: 0 auto;
+
+    li{
+        margin-bottom: 15px;
+        align-items: center;
+        @include flex-box();
+        @include justify-content();
+        .dot{
+            @include inline-block(5px,5px);
+            background-color: #999;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        a{
+            display: inline-block;
+            width: 75%;
+            color: #666;
+            @include overflow();
+            @include list-font-size();
+            &:hover{
+                color: $hover-color !important;
+            }
+            &:before{
+                content: '';
+                display: inline-block;
+                width: 5px;
+                height: 5px;
+                background-color: #999;
+                border-radius: 50%;
+                margin-right: 15px;
+                vertical-align: 3px;
+            }
+        }
+        .red-dot{
+            &:before{
+                background-color:$left-color;
+            }
+        }
+        span{
+            color: #999;
+        }
+        @include media(tablet){
+            margin-bottom: .15rem;
+            .dot{
+                margin-right: .15rem;
+                @include inline-block(.05rem,.05rem);
+            }
+            a{
+                width: 100%;
+                &:before{
+                    width: .06rem;
+                    height: .06rem;
+                    margin-right: .15rem;
+                }
+            }
+            span{
+                display: none;
+            }
+        }
+    }
+    // 查看更多
+    .more{
+        position: absolute;
+        right: 30px;
+        top:50px;
+        color: $important-color;
+        @include list-font-size();
+        @include media(tablet){
+            top:auto;
+            right:auto;
+            bottom: 0;
+            color: #fff;
+            font-size: .3rem;
+            text-align: center;
+            line-height: .85rem;
+            background-color: rgb(206, 204, 204);
+            @include inline-block(6.7rem,.8rem);
+        }
+    }
+    .tab-title{
+        width: 70%;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #666;
+        span{
+            display: inline-block;
+            width: 140px;
+            height: 46px;
+            line-height: 46px;
+            text-align: right;
+            padding-right: 10px;
+            color: #333;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+        }   
+        .active{
+            position: relative;
+            color: #fff;
+            padding-bottom: 1px;
+            background: linear-gradient(135deg,transparent 33px,$important-color 0);
+            &:after{
+                content: '';
+                display: inline-block;
+                width: 140px;
+                height: 4px;
+                background-color: $left-color;
+                position: absolute;
+                right: 0;
+                bottom: -6px;
+            }
+        }   
+        @include media(tablet){
+            width: 100%;
+            margin-bottom: .3rem;
+            padding-bottom: .1rem;
+            span{
+                width: 1.4rem;
+                height: .46rem;
+                margin-right: .2rem;
+                padding-right: .1rem;
+                font-size: .32rem;
+            }
+            .active{
+                color: $important-color;
+                background: #fff;
+                &:after{
+                    width: 1.4rem;
+                    height: .04rem;
+                    bottom: -.3rem;
+                }
+            }
+        }
+    }
+    .special-title{
+        position: relative;
+        color: $important-color;
+        font-weight: bold;
+        margin-bottom: 20px;
+        align-items: center;
+        @include flex-box();
+        @include title-font-size();
+
+        &:before{
+            content: '';
+            margin-right: 15px;
+            @include inline-block(5px,25px);
+            background-color:$left-color;
+        }
+        @include media(tablet){
+            margin-bottom: .2rem;
+            &:before{
+                margin-right: .15rem;
+                @include inline-block(.06rem,.4rem);
+            }
+        }
+    }
     @include media(tablet){
         width: 100%;
     }
 }
+
 // 公共头部
 .header{
     background-color: #fff;
@@ -45,21 +201,32 @@
                 top:-12px;
             }
             .nav-list{
-                padding: 20px 30px 0;
+                padding: 10px 30px;
                 justify-content: flex-end;
                 @include flex-box();
+                @include transition(.3s);
                 .nav-item{
                     position: relative;
+                    &:hover{
+                        // @include scale(1.02);
+                        @include transition(.3s);
+                        background-color: $important-color;
+                        .select-menu{
+                            display: block;
+                        }
+                    }
                     a{
                         display: inline-block;
                         color: #fff;
                         font-weight: bold;
                         padding: 6px 10px;
                         @include list-font-size();
+                        @include transition(.3s);
                     }
                     .select-menu{
+                        display: none;
                         position: absolute;
-                        top:40px;
+                        top:45px;
                         left: -40px;
                         z-index: 9999;
                         color:#333;
@@ -91,12 +258,6 @@
                         }
                     }
                 }
-                
-                // .active-link{
-                //     a{
-                //         background-color: $important-color;
-                //     }
-                // }
                
             }
             .search{
@@ -148,13 +309,14 @@
         }
         .banner{
             width: 100%;
-            height: 4rem;
+            height: 3.5rem;
             padding: .4rem .2rem;
-            background-color: pink;
             align-items: center;
             flex-direction: column;
             justify-content: space-between;
             @include flex-box();
+            @include bg-image('../images/index/banner-m.png');
+            background-size: 100% 100%;
             .login-wrap{
                 width: 100%;
                 align-items: center;
@@ -186,20 +348,31 @@
                 }
             }
             .search{
+                position: relative;
                 width: 90%;
-                height: .8rem;
+                height: .6rem;
                 background-color: #fff;
                 align-items: center;
                 @include border-radius(.2rem);
                 @include flex-box();
                 input{
                     width: 100%;
-                    height: .5rem;
+                    height: .4rem;
+                    padding-left: .4rem;
                     @include border-radius(.2rem);
+                }
+                &:after{
+                    content: '';
+                    width: .36rem;
+                    height: .36rem;
+                    position: absolute;
+                    right:.2rem;
+                    @include bg-image('../images/Search.png');
                 }
             }
         }
         .nav-wrap{
+            position: relative;
             height: 1rem;
             color: #fff;
             font-size: .36rem;
@@ -228,6 +401,37 @@
                 span{
                     font-size: .3rem;
                     font-weight: bold;
+                }
+            }
+            .menu-list{
+                position: absolute;
+                left:-3.6rem;
+                top:1rem;
+                z-index: 9999;
+                background-color: #ddd;
+                ul{
+                    width: 1.8rem;
+                    position: relative;
+                    li{
+                        padding: .1rem .2rem;
+                        a{
+                            &:before{
+                                display: none;
+                            }
+                        }
+                    }
+                    
+                    .active{
+                        background-color: rgb(241, 238, 238);
+                    }
+                    ul{
+                        width: 1.8rem;
+                        height: 100%;
+                        position: absolute;
+                        top:0;
+                        left:1.8rem;
+                        background-color: rgb(241, 238, 238);
+                    }
                 }
             }
         }
