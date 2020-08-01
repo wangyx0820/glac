@@ -81,6 +81,7 @@
             @include inline-block(6.7rem,.8rem);
         }
     }
+    // tab标题
     .tab-title{
         width: 70%;
         margin-bottom: 30px;
@@ -135,6 +136,7 @@
             }
         }
     }
+    // 侧边标题
     .special-title{
         position: relative;
         color: $important-color;
@@ -207,10 +209,12 @@
                 @include transition(.3s);
                 .nav-item{
                     position: relative;
+                    padding-bottom: 15px;
                     &:hover{
-                        // @include scale(1.02);
                         @include transition(.3s);
-                        background-color: $important-color;
+                        >a{
+                            background-color: $important-color;
+                        }
                         .select-menu{
                             display: block;
                         }
@@ -230,9 +234,11 @@
                         left: -40px;
                         z-index: 9999;
                         color:#333;
+                        border-radius: 5px;
                         border: 1px solid $important-color;
                         @include content-font-size();
                         background-color: rgba(255, 254, 255,0.7);
+                        box-shadow:0px 10px 30px 0px rgba(255, 255, 255, 0.1);
                         .menu-list{
                             width: 190px;
                             padding: 10px;
@@ -275,6 +281,7 @@
                     border-top-right-radius:0;
                 }
                 span{
+                    cursor: pointer;
                     color: #fff;
                     font-size: 18px;
                     text-align: center;
@@ -303,14 +310,13 @@
         text-align: center;
         h3{
             color: #666;
-            height: 1rem;
-            line-height: 1rem;
+            padding: .2rem 0;
             font-size: .4rem;
         }
         .banner{
             width: 100%;
             height: 3.5rem;
-            padding: .4rem .2rem;
+            padding: .3rem .2rem .4rem;
             align-items: center;
             flex-direction: column;
             justify-content: space-between;
@@ -405,32 +411,49 @@
             }
             .menu-list{
                 position: absolute;
-                left:-3.6rem;
+                left:-1.8rem;
                 top:1rem;
                 z-index: 9999;
-                background-color: #ddd;
+                background-color: #eee;
+
                 ul{
                     width: 1.8rem;
+                    padding: .1rem 0;
                     position: relative;
                     li{
                         padding: .1rem .2rem;
                         a{
+                            font-weight: bold;
                             &:before{
                                 display: none;
                             }
                         }
                     }
-                    
-                    .active{
-                        background-color: rgb(241, 238, 238);
-                    }
-                    ul{
-                        width: 1.8rem;
+                    .secondary-menu{
+                        width: 0;
                         height: 100%;
                         position: absolute;
                         top:0;
-                        left:1.8rem;
-                        background-color: rgb(241, 238, 238);
+                        left:1.78;
+                        background-color: #FFF;
+                        @include transition(.3s);
+                        li{
+                            a{
+                                font-weight: normal;
+                            }
+                        }
+                    }
+                    .active{
+                        background-color: #fff;
+                        border-left: 1px solid $left-color;
+                        >a{
+                            color: #000 !important;
+                        }
+                        .secondary-menu{
+                            width: 1.8rem;
+                            left:1.78rem;
+                            @include transition(.3s);
+                        }
                     }
                 }
             }
@@ -509,7 +532,7 @@
             justify-content: space-between;
             @include flex-box();
             div{
-                margin-right: 20px;
+                margin-right: 30px;
                 align-items: center;
                 flex-direction: column;
                 @include flex-box();
@@ -555,9 +578,9 @@
             }
             .swiper-wrapper{
                 .swiper-slide{
-                    width: 1.5rem !important;
-                    height: .9rem !important;
-                    margin-right: .1rem;
+                    width: 1.8rem !important;
+                    height: 1.2rem !important;
+                    margin-right: .2rem;
                 }
             }
         }

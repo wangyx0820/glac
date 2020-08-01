@@ -1,9 +1,23 @@
+document.body.addEventListener('touchstart', function(){ });
+
 // 点击菜单弹出二级菜单栏
 var menuBtn = document.querySelector('.left-menu-btn');
-var menuList = document.querySelector('.menu-list');
+var menuList = document.querySelector('#menuList');
+var subMenu = document.querySelector('.submenu');
 menuBtn.onclick = function(){
-    menuList.style.left = 0;
+    if(menuList.style.left=='0rem'){
+        menuList.style.left = '-1.8rem';
+        menuList.style.transition = 'all .3s';
+        subMenu.classList.remove('active')
+    }else{
+        menuList.style.left = '0rem';
+        menuList.style.transition = 'all .3s';
+    }
 }
+subMenu.onclick = function(){
+    subMenu.className = 'active'
+}
+
 
 // 监听页面滚动高度，固定导航栏
 window.onscroll=function(){
@@ -15,7 +29,8 @@ window.onscroll=function(){
         navBar.style.top = '0';
         navBar.style.zIndex = '9999';
         navBar.style.width = '1200px';
-        navBar.style.background = 'rgba(32, 72, 129, 0.8)'
+        navBar.style.paddingBottom = '0'
+        navBar.style.background = 'rgba(0, 0, 0, 0.7)'
     }else{
         navBar.style.position = 'static';
         navBar.style.background = ''

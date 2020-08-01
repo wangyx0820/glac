@@ -209,7 +209,7 @@
                 cursor: pointer;
                 border-left: 1px solid #333;
                 &:hover{
-                    color: $important-color;
+                    color: #659aff;
                 }
             }
             .active{
@@ -264,7 +264,7 @@
             .swiper-wrapper{
                 .swiper-slide{
                     height: 3.5rem !important;
-                    margin-bottom: .4rem;
+                    margin-bottom: .2rem;
                     overflow: hidden;
                     .left-img{
                         img{
@@ -274,7 +274,9 @@
                         }
                     }
                     .right-text{
+                        height: 3.2rem;
                         padding-right: 0;
+                        overflow: hidden;
                         h3{
                             font-size: .28rem;
                             margin-bottom: .2rem;
@@ -293,7 +295,7 @@
                         }
                         p{
                             line-height: .4rem;
-                            @include overflow-more(4);
+                            @include overflow-more(3);
                         }
                     }
                 }

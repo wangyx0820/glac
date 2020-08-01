@@ -52,8 +52,9 @@ a:hover{
  }
 
 .big-pagination .swiper-pagination-bullet{
-    width: 12px !important;
-    height: 12px !important;
+    width: 16px !important;
+    height: 5px !important;
+    border-radius: 5px;
 }
 .swiper-pagination-bullets{
     padding-right:10px !important;
@@ -70,10 +71,17 @@ a:hover{
 }
 .swiper-button-next, .swiper-button-prev{
     color: #fff !important;
+    transform: scale(0.8);
 }
-.big-pagination {
+.swiper-button-prev{
+    left:-5px !important;
+}
+.swiper-button-next{
+    right:-5px !important;
+}
+/* .big-pagination {
     bottom: 0px !important;
- }
+ } */
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 ::-webkit-scrollbar
 {

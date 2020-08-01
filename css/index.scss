@@ -245,24 +245,28 @@
             }
         }
         // 广告轮播图
-        .ad-swiper,.swiper-container2{
+        .ad-swiper{
             width: 100%;
             height: 160px;
             overflow: hidden;
             position: relative;
             background-color:#fff;
-            img{
-                width: 100% !important;
-                height: 100%;
+            .swiper-container{
+                height: 100% !important;
+                img{
+                    width: 100% !important;
+                    height: 100%;
+                }
             }
+
             @include media(tablet){
                 width:100%;
                 margin: 0 auto;
                 height: 2.5rem;
-                border-top: .2rem solid #eee;
+                border-top: .4rem solid #eee;
                 border-bottom: .4rem solid #eee;
                 background-color: #eee;
-                .swiper-container2{
+                .swiper-container{
                     width: 92%;
                     margin:0 auto;
                 }
@@ -392,6 +396,9 @@
                         width: 240px;
                         height: 156px;
                         margin-right: 20px;
+                        &:last-child{
+                            display: none;
+                        }
                     }
                 }
                 .more{
@@ -458,8 +465,12 @@
                         justify-content: space-between;
                         @include flex-box();
                         img{
-                            width: 2.4rem;
-                            height: 1.56rem;
+                            width: 2.1rem;
+                            height: 1.5rem;
+                            margin-right: 0;
+                            &:last-child{
+                                display: block;
+                            }
                         }
                     }
                 }
@@ -508,11 +519,16 @@
                 }
             }
         }
+        .info-tech{
+            @include media(tablet){
+                margin-bottom: .5rem;
+            }
+        }
         // 产品揽胜
         .product{
             width: 100%;
             color: #fff;
-            padding:30px;
+            padding:30px 0 30px 30px;
             background:url('../images/index/cbanping.png') no-repeat center fixed;
             background-size: 100% 100%;
             .more{
@@ -528,10 +544,10 @@
             .wrap{
                 @include flex-box();
                 .product-list{
-                    width: 25%;
+                    width: 23%;
                     border-left: 1px solid #fff;
                     .product-item{
-                        width: 80%;
+                        width: 90%;
                         height: 50px;
                         line-height: 50px;
                         font-size: 24px;
@@ -550,33 +566,23 @@
                 .product-cont{
                     width: 75%;
                     height: 600px;
-                    overflow: hidden;
-                    position: relative;
-                    @include flex-box();
-                    .swiper-container3{
+
+                    .swiper-container{
                         width: 100%;
                         height:100%;
+                        padding: 0 30px;
                         .swiper-wrapper{
-                            width: 100%;
-                            height: auto;
-                            overflow: hidden;
-                            // align-items: center;
-                            // flex-wrap: nowrap;
-                            flex-direction: row;
-                            @include flex-box();
+
                             .swiper-slide{
-                                width: 168px !important;
+                                // width: 168px !important;
                                 height:280px !important;
                                 color: #333;
                                 text-align: center;
-                                margin:0 50px 30px 0;
                                 background-color: #fff;
                                 flex-direction: column;
                                 justify-content: space-around;
                                 @include flex-box();
-                                // &:nth-of-type(4n){
-                                //     margin-right: 0;
-                                // }
+
                                 img{
                                     margin: 0 auto;
                                     background-color: #eee;
@@ -654,21 +660,23 @@
                         width: 100%;
                         height: auto;
                         margin-top: .4rem;
-                        .swiper-container3{
+                        .swiper-container{
+                            padding: 0;
                             .swiper-wrapper{
                                 width: 100% !important;
                                 flex-wrap: wrap;
+                                flex-direction: row;
                                 justify-content: space-between;
                                 @include flex-box();
                                 .swiper-slide{
                                     width: 48% !important;
                                     height: auto !important; 
                                     border:1px solid #ddd;
-                                    margin: 0 0 .4rem 0;
+                                    margin: 0 0 .4rem 0 !important;
                                     padding: .4rem 0;
                                     img{
-                                        width: 2rem;
-                                        height: 2rem;
+                                        width: 2.5rem;
+                                        height: 2.5rem;
                                     }
                                     p{
                                         padding: 0 .1rem;
@@ -729,7 +737,7 @@
             @include media(tablet){
                 order:2;
                 background-color: #fff;
-                padding: .8rem .3rem .5rem;
+                padding: 0 .3rem .5rem;
                 .card-wrap{
                     flex-wrap: wrap;
                     justify-content: space-between;
@@ -801,8 +809,8 @@
             }
             @keyframes scaleLoop1{
                 0%{ transform: scale(1); }
-                50%{ transform: scale(1.1); }
-                100%{ transform: scale(1); }
+                // 50%{ transform: scale(1.1); }
+                100%{ transform: scale(1.1); }
             }
             @keyframes patt4{
                 0%{ transform: rotate(-1deg);}
@@ -831,7 +839,7 @@
                         font-weight: bold;
                         text-align: center;
                         line-height: 58px;
-                        z-index:9999;
+                        z-index:8888;
                         @include transition(.3s);
                         &:after{
                             content: '';
@@ -841,7 +849,17 @@
                             bottom: 0;
                             left: 0;
                             right: 0;
-                            @include bg-image('../images/index/kuang_1.png')
+                            z-index: -1;
+                            @include transition(.3s);
+                            @include bg-image('../images/index/kuang_1.png');
+
+                        }
+                        &:hover{
+                            @include scale(1.02);
+                            @include transition(.3s);
+                            &:after{
+                                @include bg-image('../images/index/kuang_2.png');
+                            }
                         }
                     }
 

@@ -68,6 +68,9 @@
                 cursor: pointer;
                 margin-left: 5px;
                 @include inline-block(18px,18px);
+                &:last-child{
+                    display: none;
+                }
             }
             @for $i from 1 through 5 {
                 .item#{$i} { 
@@ -115,9 +118,15 @@
             }
             .share{
                 height: .8rem;
+                padding-right: .2rem;
                 span{
                     margin-left: .2rem;
                     @include inline-block(.36rem,.36rem);
+                    display: none;
+                    &:last-child{
+                        display: block;
+                        margin-left: 0;
+                    }
                 }
             }
         }
