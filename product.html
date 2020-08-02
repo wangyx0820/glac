@@ -199,20 +199,18 @@
                 </div>    
             </div>
             <!-- 底部产品列表 -->
-            <div class="bottom-product">
+            <div class="bottom-product" id="productList">
                 <a href="" class="more">查看更多</a>
                 <div class="left-menu">
-                    <span class="active">卫星导航接收芯片</span>
-                    <span>导航电子地图</span>
-                    <span>车载导航仪</span>
-                    <span>卫星导航监视终端</span>
-                    <span>天线</span>
-                    <span>导航电子地图</span>
-                    <span>车载导航仪</span>
-                    <span>卫星导航监视终端</span>
-                    <span>车载导航仪</span>
+                    <span class="product-item active">卫星导航接收芯片</span>
+                    <span class="product-item">导航电子地图</span>
+                    <span class="product-item">车载导航仪</span>
+                    <span class="product-item">卫星导航监视终端</span>
+                    <span class="product-item">天线</span>
+                    <span class="product-item">导航电子地图</span>
+                    <span class="product-item">车载导航仪</span>
                 </div>
-                <div class="right-list">
+                <div class="right-list" id="con_prod_1">
                     <div class="pro-item">
                         <img src="./images/product.jpg" alt="">
                         <p>Humbird蜂鸟低功能耗GNSSSoC芯片</p>
@@ -256,6 +254,12 @@
                         <a href="" class="detail">[详细]></a>
                     </div>
                 </div>
+                <div class="right-list hide" id="con_prod_2">tab2</div>
+                <div class="right-list hide" id="con_prod_3">tab3</div>
+                <div class="right-list hide" id="con_prod_4">tab4</div>
+                <div class="right-list hide" id="con_prod_5">tab5</div>
+                <div class="right-list hide" id="con_prod_6">tab6</div>
+                <div class="right-list hide" id="con_prod_7">tab7</div>
             </div>
         </div>
 
@@ -343,6 +347,8 @@
     <script src="./js/common.js"></script>
     <script src="./js/swiper.min.js"> </script>
     <script>
+        select('productList','right-list')
+
          var mySwiper1 = new Swiper ('.swiper-container1', {
             // direction : 'vertical',
             // 如果需要分页器

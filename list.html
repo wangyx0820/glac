@@ -121,13 +121,13 @@
             <!-- 左侧列表 -->
             <div class="left-list">
                 <div class="tab-list">
-                    <span class="active">重点专题</span>
-                    <span>媒体声音</span>
-                    <span>专家观点</span>
-                    <span>协会动态</span>
-                    <span>通知公告</span>
+                    <span class="active" id="list1" onclick="setTab('list',1,5)">重点专题</span>
+                    <span id="list2" onclick="setTab('list',2,5)">媒体声音</span>
+                    <span id="list3" onclick="setTab('list',3,5)">专家观点</span>
+                    <span id="list4" onclick="setTab('list',4,5)">协会动态</span>
+                    <span id="list5" onclick="setTab('list',5,5)">通知公告</span>
                 </div>
-                <div class="news-list">
+                <div class="news-list" id="con_list_1">
                     <div class="title">
                         <span class="date">
                             <b class="day">27</b>
@@ -174,6 +174,10 @@
                         </li>
                     </ul>
                 </div>
+                <div class="news-list hide" id="con_list_2">媒体声音内容</div>
+                <div class="news-list hide" id="con_list_3">专家观点内容</div>
+                <div class="news-list hide" id="con_list_4">协会动态内容</div>
+                <div class="news-list hide" id="con_list_5">通知公告内容</div>
             </div>
             <!-- 右侧列表 -->
             <div class="right-list">

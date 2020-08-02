@@ -150,10 +150,10 @@
                         </li>
                     </ul>
                     <div class="tab-title">
-                        <span class="active">协会动态</span>
-                        <span>通知公告</span>
+                        <span class="active" id="state1" onclick="setTab('state',1,2)">协会动态</span>
+                        <span id="state2" onclick="setTab('state',2,2)">通知公告</span>
                     </div>
-                    <ul>
+                    <ul id="con_state_1">
                         <li>
                             <a href="">中位协党支部为抗击新冠疫情助力加油</a>
                         </li>
@@ -168,6 +168,23 @@
                         </li>
                         <li>
                             <a href="">中位协党支部为抗击新冠疫情助力加油</a>
+                        </li>
+                    </ul>
+                    <ul id="con_state_2" class="hide">
+                        <li>
+                            <a href="">广东今年年底将基本建立自然资源保护制度自然资源保护制度自然资源保护制度</a>
+                        </li>
+                        <li>
+                            <a href="">深切悼念宁津生院士，先生千古!</a>
+                        </li>
+                        <li>
+                            <a href="">协会发布《众志成城坚决打赢疫情防控阻击战倡中</a>
+                        </li>
+                        <li>
+                            <a href="">抗新冠，战疫情征稿启事</a>
+                        </li>
+                        <li>
+                            <a href="">深切悼念宁津生院士，先生千古!</a>
                         </li>
                     </ul>
                 </div>
@@ -222,36 +239,65 @@
                 <!-- 专家观点、媒体声音 -->
                 <div class="left-part">
                     <div class="tab-title">
-                        <span class="active">专家观点</span>
-                        <span>媒体声音</span>
+                        <span class="active" id="view1" onclick="setTab('view',1,2)">专家观点</span>
+                        <span id="view2" onclick="setTab('view',2,2)">媒体声音</span>
                     </div>
                     <a class="more" href="">查看更多>></a>
                     <!-- 左侧摘要 -->
-                    <div class="abstract">
-                        <img src="./images/news.jpg" alt="" class="hvr-grow-shadow">
-                        <div class="news">
-                            <h3><a href="">黑龙江台应用北斗大会召开台应用台应用</a></h3>
-                            <p>9月25日，北斗全统将子2020年全面完成建成北20年全面完成于2北斗全球系统将面完成于2北斗全球系统将面完成于2北斗全球系统将于北斗全球系统将于020年完成独成</p>
+                    <div id="con_view_1">
+                        <div class="abstract">
+                            <img src="./images/news.jpg" alt="" class="hvr-grow-shadow">
+                            <div class="news">
+                                <h3><a href="">黑龙江台应用北斗大会召开台应用台应用</a></h3>
+                                <p>9月25日，北斗全统将子2020年全面完成建成北20年全面完成于2北斗全球系统将面完成于2北斗全球系统将面完成于2北斗全球系统将于北斗全球系统将于020年完成独成</p>
+                            </div>
                         </div>
+                        <ul>
+                            <li>
+                                <a href="">【黑龙江台】中国北美卫星大会召开北美卫星大会召北美卫星大会召北美卫星大会召</a>
+                                <span>[2020-03-27]</span>
+                            </li>
+                            <li>
+                                <a href="">【黑龙江台】中国北美卫星大会召开</a>
+                                <span>[2020-03-27]</span>
+                            </li>
+                            <li>
+                                <a href="">【黑龙江台】中国北美卫星开</a>
+                                <span>[2020-03-27]</span>
+                            </li>
+                            <li>
+                                <a href="">北斗全球系统将于2020年建成</a>
+                                <span>[2020-03-27]</span>
+                            </li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li>
-                            <a href="">【黑龙江台】中国北美卫星大会召开北美卫星大会召北美卫星大会召北美卫星大会召</a>
-                            <span>[2020-03-27]</span>
-                        </li>
-                        <li>
-                            <a href="">【黑龙江台】中国北美卫星大会召开</a>
-                            <span>[2020-03-27]</span>
-                        </li>
-                        <li>
-                            <a href="">【黑龙江台】中国北美卫星开</a>
-                            <span>[2020-03-27]</span>
-                        </li>
-                        <li>
-                            <a href="">北斗全球系统将于2020年建成</a>
-                            <span>[2020-03-27]</span>
-                        </li>
-                    </ul>
+                    <div id="con_view_2" class="hide">
+                        <div class="abstract">
+                            <img src="./images/satellite.jpg" alt="" class="hvr-grow-shadow">
+                            <div class="news">
+                                <h3><a href="">北斗全球系统将于2020年建成</a></h3>
+                                <p>9月25日，北斗全统将子2020年全面完成建成北20年全面完成于2北斗全球系统将面完成于2北斗全球系统将面完成于2北斗全球系统将于北斗全球系统将于020年完成独成</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="">中国北美卫星大会召开北美卫星大会召北美卫星大会召北美卫星大会召</a>
+                                <span>[2020-03-27]</span>
+                            </li>
+                            <li>
+                                <a href="">中国北美卫星大会召开</a>
+                                <span>[2020-03-27]</span>
+                            </li>
+                            <li>
+                                <a href="">中国北美卫星开</a>
+                                <span>[2020-03-27]</span>
+                            </li>
+                            <li>
+                                <a href="">北斗全球系统将于2020年建成</a>
+                                <span>[2020-03-27]</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <!-- 右侧重点专题 -->
                 <div class="right-part">
@@ -276,15 +322,15 @@
                 </div>
             </div>
             <!-- part5-科技奖励 -->
-            <div class="technology info-tech">
+            <div class="technology">
                 <div class="tab-title">
-                    <span class="active">科技奖励</span>
-                    <span>政策法规</span>
-                    <span>行业标准</span>
-                    <span>北斗应用</span>
+                    <span class="active" id="tech1" onclick="setTab('tech',1,4)">科技奖励</span>
+                    <span id="tech2" onclick="setTab('tech',2,4)">政策法规</span>
+                    <span id="tech3" onclick="setTab('tech',3,4)">行业标准</span>
+                    <span id="tech4" onclick="setTab('tech',4,4)">北斗应用</span>
                 </div>
                 <a class="more" href="">查看更多>></a>
-                <div class="news-wrap">
+                <div class="news-wrap" id="con_tech_1">
                     <ul>
                         <li>
                             <a href="">广东今年底将基本建立自然资源资产产权制度深切</a>
@@ -344,6 +390,9 @@
                         </li>
                     </ul>
                 </div>
+                <div id="con_tech_2" class="hide">我是政策法规内容</div>
+                <div id="con_tech_3" class="hide">我是行业标准内容</div>
+                <div id="con_tech_4" class="hide">我是北斗应用内容</div>
             </div>
         </div>
 

@@ -4,6 +4,10 @@
   margin: 0 auto;
 }
 
+.container .hide {
+  display: none !important;
+}
+
 .container li {
   margin-bottom: 15px;
   -webkit-box-align: center;

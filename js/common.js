@@ -1,5 +1,37 @@
 document.body.addEventListener('touchstart', function(){ });
 
+// tab切换
+
+function select(id,className){
+    var target = document.getElementById(id); 
+    var els = target.getElementsByClassName('product-item');
+    var swipers = target.getElementsByClassName(className);
+
+    for (var i = 0; i < els.length; i++) {
+        const element = els[i];
+        els[i].index = i;
+
+        element.onclick = function(){
+            for(var j=0;j<els.length;j++){
+                //清除所有的 类
+                els[j].classList.remove('active');
+                swipers[j].classList.add('hide');
+            }
+            this.classList.add('active')
+            swipers[this.index].classList.remove('hide');
+        }
+    }
+}
+
+function setTab(name,cursel,n){
+    for(i=1;i<=n;i++){
+        var menu=document.getElementById(name+i);
+        var con=document.getElementById("con_"+name+"_"+i);
+        menu.className = i==cursel ? "active" : "";
+        i == cursel ? con.classList.remove('hide') : con.classList.add('hide');
+    }
+}
+
 // 点击菜单弹出二级菜单栏
 var menuBtn = document.querySelector('.left-menu-btn');
 var menuList = document.querySelector('#menuList');

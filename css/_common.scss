@@ -3,7 +3,9 @@
 .container{
     width: 1200px;
     margin: 0 auto;
-
+    .hide{
+        display: none !important;
+    }
     li{
         margin-bottom: 15px;
         align-items: center;
